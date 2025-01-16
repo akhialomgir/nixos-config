@@ -45,7 +45,22 @@
   services.openssh.enable = true; # req: git
 
   # substituters
-  nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+  nix.settings = {
+    # given the users in this list the right to specify additional substituters via:
+    #    1. `nixConfig.substituters` in `flake.nix`
+    #    2. command line args `--options substituters http://xxx`
+    trusted-users = [ "akhia" ];
+
+    substituters = [
+      # cache mirror located in China
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://cache.nixos.org"
+    ];
+
+    trusted-public-keys = [
+      # the default public key of cache.nixos.org, it's built-in, no need to add it here
+    ];
+  };
 
   # do not need to keep too much generations
   boot.loader.systemd-boot.configurationLimit = 10;
