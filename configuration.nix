@@ -5,19 +5,27 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # wsl
   wsl.enable = true;
 
   # flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # packages
-  environment.systemPackages = with pkgs; [ 
-    wget #req: vscode
-    git #req: flakes
+  environment.systemPackages = with pkgs; [
+    wget # req: vscode
+    git # req: flakes
     neovim
     tmux
     fish
@@ -29,12 +37,12 @@
 
   # vscode remote server
   programs.nix-ld = {
-      enable = true;
-      package = pkgs.nix-ld-rs; # only for NixOS 24.05
+    enable = true;
+    package = pkgs.nix-ld-rs; # only for NixOS 24.05
   };
 
   # ssh
-  services.openssh.enable = true; #req: git
+  services.openssh.enable = true; # req: git
 
   # substituters
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];

@@ -4,8 +4,8 @@
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
 
-  home.packages = with pkgs;[
-    deno #req: lumeLand
+  home.packages = with pkgs; [
+    deno # req: lumeLand
   ];
 
   # git
