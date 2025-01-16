@@ -6,6 +6,7 @@
 
   home.packages = with pkgs; [
     deno # req: lumeLand
+    python314
   ];
 
   # git
