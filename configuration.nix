@@ -21,6 +21,7 @@
     neovim
     tmux
     fish
+    nixfmt-rfc-style
   ];
 
   # editor
