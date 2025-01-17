@@ -9,12 +9,9 @@
     python314
   ];
 
-  # git
-  programs.git = {
-    enable = true;
-    userName = "akhialomgir";
-    userEmail = "akhialomgir362856@gmail.com";
-  };
+  imports = [
+    ./git.nix
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
