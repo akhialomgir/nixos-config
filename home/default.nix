@@ -9,9 +9,8 @@
     python314
   ];
 
-  imports = [
-    ./git.nix
-  ];
+  # Link original config files
+  home.file.".gitconfig".source = ./.gitconfig;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

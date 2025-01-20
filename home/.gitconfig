@@ -1,0 +1,13 @@
+[user]
+	email = akhialomgir362856@gmail.com
+	name = akhialomgir
+[core]
+	editor = nvim
+	quotepath = false
+[merge]
+	tool = nvimdiff
+[mergetool]
+	nvimdiff = trustExitCode
+	keepBackup = false
+[pull]
+	rebase = false
