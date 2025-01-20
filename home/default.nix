@@ -11,6 +11,7 @@
 
   # Link original config files
   home.file.".gitconfig".source = ./.gitconfig;
+  home.file.".tmux.conf".source = ./.tmux.conf;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
