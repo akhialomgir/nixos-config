@@ -10,8 +10,18 @@
   ];
 
   # Link original config files
-  home.file.".gitconfig".source = ./.gitconfig;
-  home.file.".tmux.conf".source = ./.tmux.conf;
+  home.file = builtins.listToAttrs (
+    map
+      (file: {
+        name = file;
+        value.source = ./assets/${file};
+      })
+      [
+        # config files here
+        ".gitconfig"
+        ".tmux.conf"
+      ]
+  );
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
