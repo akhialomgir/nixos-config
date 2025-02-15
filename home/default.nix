@@ -7,6 +7,9 @@
   home.packages = with pkgs; [
     deno # req: lumeLand
     python314
+    # haskell
+    ghc
+    stack
   ];
 
   # Link original config files
