@@ -10,6 +10,9 @@
     # haskell
     ghc
     stack
+    # js
+    nodejs
+    nodePackages.typescript
   ];
 
   # Link original config files
