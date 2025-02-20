@@ -14,7 +14,7 @@
     ))
     # haskell
     ghc
-    stack
+    haskell-language-server
     # js
     nodejs
     nodePackages.typescript
