@@ -5,8 +5,13 @@
   home.homeDirectory = "/home/nixos";
 
   home.packages = with pkgs; [
-    deno # req: lumeLand
-    python314
+    deno # required by lumeLand
+    # python
+    (python3.withPackages (
+      ps: with ps; [
+        black
+      ]
+    ))
     # haskell
     ghc
     stack
